@@ -20,7 +20,7 @@ invalid_names = invalid_names_res.text.split("\n")
 
 if res.status_code == 200:
 	print(f"Package \"{args.name}\" is not available.")
-	print(f"View it at: {repo_url}")
+	print(f"View it at: {repo_url.format(args.name)}")
 elif args.name in invalid_names or " " in args.name or "\t" in args.name:
  	print(f"The package name \"{args.name}\" is not allowed")
 elif res.status_code == 404:
