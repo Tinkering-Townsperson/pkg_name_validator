@@ -15,7 +15,7 @@ match args.repo:
 		sys.exit(print(f"The repository {args.repo} is not defined. Feel free to add it here: https://github.com/tinkering-townsperson/pkg_name_validator"))
 
 res = requests.get(repo_url.format(args.name))
-invalid_names_res = requests.get("https://raw.githubusercontent.com/tinkering-townsperson/pkg_name_validator/main/lists/invalid.txt")
+invalid_names_res = requests.get("https://raw.githubusercontent.com/tinkering-townsperson/pkg_name_validator/main/lists/invalid_names.txt")
 invalid_names = invalid_names_res.text.split("\n")
 
 if res.status_code == 200:
